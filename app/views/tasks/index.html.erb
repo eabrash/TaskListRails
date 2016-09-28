@@ -1,0 +1,7 @@
+<h1>Welcome to your task list!</h1>
+<p>Please click on a task name to see the details of the task.</p>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= link_to(task.title, show_path(task.id)) %></li>
+  <% end %>
+</ul>

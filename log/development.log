@@ -1,0 +1,325 @@
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTasks (20160928210407)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "completed_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160928210407"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Feed the cat"], ["description", "Give the cat 1/2 cup of dry food and mix in 2 tbsp. of moist food"], ["created_at", "2016-09-28 21:07:42.689624"], ["updated_at", "2016-09-28 21:07:42.689624"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Wash the car"], ["description", "Take the car to Lozano Car Wash and clean inside & out"], ["created_at", "2016-09-28 21:08:37.479330"], ["updated_at", "2016-09-28 21:08:37.479330"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Bake brownies for school"], ["description", "Bake double batch of brownies from Mark Bittman's 'How to Cook Everything'"], ["created_at", "2016-09-28 21:09:35.688286"], ["updated_at", "2016-09-28 21:09:35.688286"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+
+
+Started GET "/" for ::1 at 2016-09-28 14:19:15 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendered tasks/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 579ms (Views: 572.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-28 14:19:16 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-28 14:19:16 -0700
+
+
+Started GET "/" for ::1 at 2016-09-28 14:23:33 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `name' for #<Task:0x007fc1930809d8>):
+    2: <p>Please click on a task name to see the details of the task.</p>
+    3: <ul>
+    4:   <% @tasks.each do |task| %>
+    5:     <%= link_to(task.name, show_path(task.id)) %>
+    6:   <% end %>
+    7: </ul>
+  app/views/tasks/index.html.erb:5:in `block in _app_views_tasks_index_html_erb__3850621898753828515_70234705156400'
+  app/views/tasks/index.html.erb:4:in `_app_views_tasks_index_html_erb__3850621898753828515_70234705156400'
+
+
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.1ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.6ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (84.9ms)
+
+
+Started GET "/" for ::1 at 2016-09-28 14:23:49 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-28 14:23:49 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-28 14:23:49 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-28 14:23:49 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-28 14:23:49 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-28 14:23:49 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-28 14:23:49 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-28 14:23:49 -0700
+
+
+Started GET "/" for ::1 at 2016-09-28 14:24:13 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-28 14:24:13 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-28 14:24:13 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-28 14:24:13 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-28 14:24:13 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-28 14:24:13 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-28 14:24:13 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-28 14:24:13 -0700
+
+
+Started GET "/tasks/show/1" for ::1 at 2016-09-28 14:24:15 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered tasks/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/show/2" for ::1 at 2016-09-28 14:24:18 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendered tasks/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tasks/show/3" for ::1 at 2016-09-28 14:24:20 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendered tasks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-09-28 14:34:29 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tasks/show/1" for ::1 at 2016-09-28 14:34:31 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/show/2" for ::1 at 2016-09-28 14:34:35 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tasks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/show/3" for ::1 at 2016-09-28 14:34:38 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered tasks/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-09-28 14:37:09 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-28 14:37:09 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-28 14:37:09 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-28 14:37:09 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-28 14:37:09 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-28 14:37:09 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-28 14:37:09 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-28 14:37:09 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-09-28 14:37:11 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/show/1" for ::1 at 2016-09-28 14:37:14 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/show.html.erb within layouts/application (29.6ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x007fc1989ef320>:0x007fc19707cde8>
+Did you mean?  @task):
+    18:   <% end %>
+    19: </p>
+    20: 
+    21: <nav><%= link_to("My task list", show_path(task.id)) %></nav>
+  app/views/tasks/show.html.erb:21:in `_app_views_tasks_show_html_erb___3591346368917212832_70234719627360'
+
+
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.8ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (36.5ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (81.3ms)
+
+
+Started GET "/tasks/show/1" for ::1 at 2016-09-28 14:37:18 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/show.html.erb within layouts/application (39.3ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `task' for #<#<Class:0x007fc1989ef320>:0x007fc1974a52d0>
+Did you mean?  @task):
+    18:   <% end %>
+    19: </p>
+    20: 
+    21: <nav><%= link_to("My task list", show_path(task.id)) %></nav>
+  app/views/tasks/show.html.erb:21:in `_app_views_tasks_show_html_erb___3591346368917212832_70234719627360'
+
+
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/actionpack-4.2.7/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.0ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (34.5ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/emilyabrash/.rvm/gems/ruby-2.3.0@rails_gemset/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (77.3ms)
+
+
+Started GET "/tasks/show/1" for ::1 at 2016-09-28 14:37:36 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tasks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-28 14:37:36 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-28 14:37:36 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-28 14:37:36 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-28 14:37:36 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-28 14:37:36 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-28 14:37:36 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-28 14:37:36 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-09-28 14:37:38 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-09-28 14:37:39 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/show/1" for ::1 at 2016-09-28 14:37:41 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-09-28 14:37:43 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.2ms)
