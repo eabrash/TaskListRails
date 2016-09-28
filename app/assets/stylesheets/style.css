@@ -1,0 +1,7 @@
+footer ul {
+  list-style-type: none;
+}
+
+footer li {
+  display: inline-block;
+}

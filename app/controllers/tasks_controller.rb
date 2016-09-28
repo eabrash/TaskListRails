@@ -14,11 +14,15 @@ class TasksController < ApplicationController
   end
 
   def create
+    Task.create(title: params[:title], description: params[:description])
+    redirect_to action: "index"
   end
 
   def edit
   end
 
   def destroy
+    Task.find(params[:id]).destroy
+    redirect_to action: "index"
   end
 end

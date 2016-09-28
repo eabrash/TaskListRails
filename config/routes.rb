@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   put 'tasks/:id/update' => 'tasks#update', as: 'update'
 
-  delete 'tasks/destroy' => 'tasks#destroy', as: 'destroy'
+  delete 'tasks/:id/destroy' => 'tasks#destroy', as: 'destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -11,7 +11,12 @@
 <%= yield %>
 
 <footer>
-  <nav><%= link_to("My task list", index_path) %></nav>
+  <nav>
+    <ul>
+      <li><%= link_to("My task list", index_path) %></li>
+      <li><%= link_to("New task", new_path) %></li>
+    </ul>
+  </nav>
 </footer>
 
 </body>
