@@ -7,6 +7,10 @@ class TasksController < ApplicationController
   end
 
   def update
+    task = Task.find(params[:id])
+    task.completed_at=DateTime.now
+    task.save
+    redirect_to action: "show", id: params[:id]
   end
 
   def show

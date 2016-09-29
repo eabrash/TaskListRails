@@ -6,7 +6,7 @@
   <% if @task.completed_at %>
     <%= "Completed!" %>
   <% else %>
-    <%= "Not yet completed" %>
+    Not yet complete (<%= link_to("Mark as completed", update_path(@task.id), :method => 'put') %>)
   <% end %>
 </p>
 <h2>Date completed:</h2>
