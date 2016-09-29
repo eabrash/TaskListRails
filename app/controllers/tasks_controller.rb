@@ -21,7 +21,6 @@ class TasksController < ApplicationController
       redirect_to action: "index"
     end
 
-
   end
 
   def show
