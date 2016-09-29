@@ -7,10 +7,21 @@ class TasksController < ApplicationController
   end
 
   def update
+
     task = Task.find(params[:id])
-    task.completed_at=DateTime.now
-    task.save
-    redirect_to action: "show", id: params[:id]
+
+    print "params title #{params[:title]}"
+    print "params description #{params[:description]}"
+
+    if params[:title] && params[:description]
+      task.update(title: params[:title], description: params[:description])
+      redirect_to action: "show", id: params[:id]
+    else
+      task.update(completed_at: DateTime.now)
+      redirect_to action: "index"
+    end
+
+
   end
 
   def show
@@ -23,6 +34,7 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id].to_i)
   end
 
   def destroy

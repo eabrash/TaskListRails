@@ -1,2 +1,11 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<h1>Make a new task</h1>
+<form name="edited-task" action="update" method="post">
+  <label for="title">Title:</label>
+  <input type="text" name="title" id="title" value="<%= @task.title %>">
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" rows="8" cols="40"><%= @task.description %>
+  </textarea>
+  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+  <button type="submit">Submit</button>
+  <input type="hidden" name="_method" value="PUT">
+</form>
