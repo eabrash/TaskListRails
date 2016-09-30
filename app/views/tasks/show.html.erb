@@ -6,9 +6,9 @@
   <h2>Completion status:</h2>
   <p>
     <% if @task.completed_at %>
-      <%= "Completed!" %>
+      <%= "Completed!" %> <img src='/assets/checkmark.png', alt="completion checkmark">
     <% else %>
-      Not yet complete (<%= link_to("Mark as completed", update_path(@task.id), :method => 'patch') %>)
+      Not yet completed
     <% end %>
   </p>
   <h2>Date completed:</h2>
