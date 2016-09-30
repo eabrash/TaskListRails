@@ -8,13 +8,16 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
-  #StackOverflow post on how to identify the referer (sending page) of a request
+  # StackOverflow post on how to identify the referer (sending page) of a request:
+  # http://stackoverflow.com/questions/16818542/how-can-i-check-which-page-has-sent-the-form.
+  # If the request to update does not come from edit, it must be a completion button click
+  # occurring on either index or a show page.
 
   def update
 
     task = Task.find(params[:id])
 
-    if params[:patch]
+    if request.referer.present? && request.referer.include?('edit')
       task.update(title: params[:patch][:title], description: params[:patch][:description])
       redirect_to action: "show", id: params[:id]
     else
