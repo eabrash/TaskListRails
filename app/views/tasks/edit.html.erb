@@ -2,12 +2,6 @@
 
 <%= form_for @task, as: :patch, url: {action: "update"} do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-
-  <%= f.submit %>
+  <%= render partial: "form", object: f, as: 'f' %>
 
 <% end %>
