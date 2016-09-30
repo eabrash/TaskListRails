@@ -1,24 +1,30 @@
 class TasksController < ApplicationController
+
   def index
     @tasks = Task.all
   end
 
   def new
+    @task = Task.new
   end
+
+  #StackOverflow post on how to identify the referer (sending page) of a request
 
   def update
 
     task = Task.find(params[:id])
 
-    print "params title #{params[:title]}"
-    print "params description #{params[:description]}"
-
-    if params[:title] && params[:description]
-      task.update(title: params[:title], description: params[:description])
+    if params[:patch]
+      task.update(title: params[:patch][:title], description: params[:patch][:description])
       redirect_to action: "show", id: params[:id]
     else
       task.update(completed_at: DateTime.now)
-      redirect_to action: "index"
+
+      if request.referer.present? && request.referer.include?('show')
+        redirect_to action: "show", id: params[:id]
+      else
+        redirect_to action: "index"
+      end
     end
 
   end
@@ -28,7 +34,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.create(title: params[:title], description: params[:description])
+    Task.create(title: params[:post][:title], description: params[:post][:description])
     redirect_to action: "index"
   end
 

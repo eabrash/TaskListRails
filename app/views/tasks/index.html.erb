@@ -1,13 +1,16 @@
 <h1>Welcome to your task list!</h1>
-<p>Please click on a task name to see the details of the task.</p>
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= link_to(task.title, show_path(task.id)) %>
-      <% if task.completed_at %>
-        [COMPLETED]
-      <% else %>
-        [<%= link_to("Mark as completed", update_path(task.id), :method => 'put') %>]
-      <% end %>
-      (<%= link_to("Delete", destroy_path(task.id), :data => {:confirm => 'Are you sure?'}, :method => 'delete') %>)</li>
-  <% end %>
-</ul>
+
+<article>
+  <p>Please click on a task name to see the details of the task.</p>
+  <ul>
+    <% @tasks.each do |task| %>
+      <li><%= link_to(task.title, show_path(task.id)) %>
+        <% if task.completed_at %>
+          [COMPLETED]
+        <% else %>
+          [<%= link_to("Mark as completed", update_path(task.id), :method => 'patch') %>]
+        <% end %>
+        (<%= link_to("Delete", destroy_path(task.id), :data => {:confirm => 'Are you sure?'}, :method => 'delete') %>)</li>
+    <% end %>
+  </ul>
+</article>
