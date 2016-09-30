@@ -13,17 +13,20 @@
   </p>
   <h2>Date completed:</h2>
 
-  <% if @task.completed_at %>
-    <p>
-      <%= @task.completed_at %>
-    </p>
-  <% else %>
-    <p>
-      <%= "Not yet completed" %>
-    </p>
-    <p>
-      <%= button_to "Edit", edit_path(@task.id), method: :get %>
-    </p>
-  <% end %>
+  <p>
+    <% if @task.completed_at %>
+        <%= @task.completed_at %>
+    <% else %>
+
+        <%= "Not yet completed" %>
+      </p>
+      <p>
+        <%= button_to("Complete!", update_path(@task.id), :method => 'patch') %>
+        <%= button_to("Edit", edit_path(@task.id), :method => 'get') %>
+
+    <% end %>
+
+    <%= button_to("Delete", destroy_path(@task.id), :data => {:confirm => 'Are you sure?'}, :method => 'delete') %>
+  </p>
 
 </article>

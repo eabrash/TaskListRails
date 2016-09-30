@@ -11609,3 +11609,792 @@ Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.1ms)
 
 
 Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:33:20 -0700
+
+
+Started GET "/tasks/show/56" for ::1 at 2016-09-30 11:35:25 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 56]]
+  Rendered tasks/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 241ms (Views: 221.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/assets/style.self-501abb5539a43a648e005b9e181cc8715ea169335a9c131a78e67957ed879812.css?body=1" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:35:26 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-09-30 11:35:28 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:35:28 -0700
+
+
+Started GET "/tasks/show/56" for ::1 at 2016-09-30 11:35:30 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 56]]
+  Rendered tasks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-09-30 11:35:32 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-09-30 11:35:33 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (28.9ms)
+  Rendered tasks/new.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 64ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-09-30 11:35:40 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mgnb0iKTrfUbWzRiG5u2DpwC/x7PQrVV4hYsw93wAX26NPIHhAhm3TI5bl8N2+SRdebDoYU7TUzxDwMswqi+kg==", "post"=>{"title"=>"Buy puppy", "description"=>"YESSSS"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Buy puppy"], ["description", "YESSSS"], ["created_at", "2016-09-30 18:35:40.874306"], ["updated_at", "2016-09-30 18:35:40.874306"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:35:40 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:35:40 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:35:40 -0700
+
+
+Started GET "/tasks/show/57" for ::1 at 2016-09-30 11:35:42 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[35mTask Load (0.7ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 57]]
+  Rendered tasks/show.html.erb within layouts/application (39.6ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.7ms)
+
+NameError - undefined local variable or method `task' for #<#<Class:0x007fd2ec429f70>:0x007fd2eda7e7a8>
+Did you mean?  @task:
+  app/views/tasks/show.html.erb:25:in `_app_views_tasks_show_html_erb__837726083330914943_70271940466400'
+  actionview (4.2.7) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.7) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.7) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.7) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/emilyabrash/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/emilyabrash/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/emilyabrash/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/emilyabrash/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/cc27818b3833e03f/variables" for ::1 at 2016-09-30 11:35:42 -0700
+
+
+Started GET "/tasks/show/57" for ::1 at 2016-09-30 11:37:03 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 57]]
+  Rendered tasks/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+SyntaxError - syntax error, unexpected ',', expecting ')'
+...fer.append=( button_to ("Edit", edit_path(@task.id), method:...
+...                               ^
+/Users/emilyabrash/Documents/TaskListRails/app/views/tasks/show.html.erb:26: syntax error, unexpected ',', expecting ')'
+...o ("Edit", edit_path(@task.id), method: :get) );@output_buff...
+...                               ^
+/Users/emilyabrash/Documents/TaskListRails/app/views/tasks/show.html.erb:26: syntax error, unexpected ')', expecting keyword_end
+...path(@task.id), method: :get) );@output_buffer.safe_append='
+...                               ^:
+  app/views/tasks/show.html.erb:26:in `'
+  actionview (4.2.7) lib/action_view/template.rb:296:in `compile'
+  actionview (4.2.7) lib/action_view/template.rb:245:in `block (2 levels) in compile!'
+  activesupport (4.2.7) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.7) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.7) lib/action_view/template.rb:244:in `block in compile!'
+  actionview (4.2.7) lib/action_view/template.rb:232:in `compile!'
+  actionview (4.2.7) lib/action_view/template.rb:144:in `block in render'
+  activesupport (4.2.7) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.7) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.7) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.7) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.7) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.7) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.7) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.7) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.7) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.7) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/emilyabrash/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.7) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.7) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.7) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.7) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.7) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.7) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.7) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.7) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.7) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.7) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.7) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.7) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.7) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.7) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.7) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.7) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.7) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.7) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.7) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.7) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.7) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.7) lib/rails/engine.rb:518:in `call'
+  railties (4.2.7) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/emilyabrash/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/emilyabrash/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/emilyabrash/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+
+Started POST "/__better_errors/a22c033b3de9f1db/variables" for ::1 at 2016-09-30 11:37:03 -0700
+
+
+Started GET "/tasks/show/57" for ::1 at 2016-09-30 11:37:31 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 57]]
+  Rendered tasks/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 16ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-501abb5539a43a648e005b9e181cc8715ea169335a9c131a78e67957ed879812.css?body=1" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:37:31 -0700
+
+
+Started GET "/tasks/show/57" for ::1 at 2016-09-30 11:38:07 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 57]]
+  Rendered tasks/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-501abb5539a43a648e005b9e181cc8715ea169335a9c131a78e67957ed879812.css?body=1" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:38:07 -0700
+
+
+Started GET "/tasks/show/57" for ::1 at 2016-09-30 11:38:33 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 57]]
+  Rendered tasks/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/style.self-501abb5539a43a648e005b9e181cc8715ea169335a9c131a78e67957ed879812.css?body=1" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:38:33 -0700
+
+
+Started PATCH "/tasks/57/update" for ::1 at 2016-09-30 11:38:35 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"62UJbKzl75HPVxxGKi9yDijIj80JQPiflmsFrhMYP7jLWCC5Cn4kueY1Rns8byCRwSyzckM5AIaFcipBDECAVw==", "id"=>"57"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 57]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_at", "2016-09-30 18:38:35.635759"], ["updated_at", "2016-09-30 18:38:35.636464"], ["id", 57]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/57
+Completed 302 Found in 8ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/tasks/show/57" for ::1 at 2016-09-30 11:38:35 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 57]]
+  Rendered tasks/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 24.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:38:35 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-09-30 11:38:40 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:38:40 -0700
+
+
+Started DELETE "/tasks/50/destroy" for ::1 at 2016-09-30 11:38:43 -0700
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z+620vfm7S3Y3qVe0w2lthIt+KuaOYqkxs0uOBHXLfTv058HUX0mBfG8/2PFTfcp+8nEFNBAcr3V1AHXDo+SGw==", "id"=>"50"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 50]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 50]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:38:43 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:38:44 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:38:44 -0700
+
+
+Started DELETE "/tasks/51/destroy" for ::1 at 2016-09-30 11:38:47 -0700
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Oo8DJkRr1x9T54pnRRw8H6adi+xp1xo9U1B05GUtB6casirz4vAcN3qF0FpTXG6AT3m3UyOu4iRASVsLenW4SA==", "id"=>"51"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 51]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 51]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:38:47 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:38:47 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:38:47 -0700
+
+
+Started DELETE "/tasks/52/destroy" for ::1 at 2016-09-30 11:38:48 -0700
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ns3Kdd6dZeUCzplgdKWBdZfUIl/qEBRRkjTnaTSvt8++8OOgeAauzSusw11i5dPqfjAe4KBp7EiBLciGK/cIIA==", "id"=>"52"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 52]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 52]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:38:48 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:38:48 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:38:48 -0700
+
+
+Started DELETE "/tasks/53/destroy" for ::1 at 2016-09-30 11:38:50 -0700
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4/2+AnRmIUgpaH1x9OPNNK/Oh2FpAP8wMfsUnzyU0dDDwJfX0v3qYAAKJ0zio5+rRiq73iN5Byki4jtwI8xuPw==", "id"=>"53"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 53]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 53]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:38:50 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 32ms (Views: 30.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:38:50 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:38:50 -0700
+
+
+Started GET "/tasks/show/57" for ::1 at 2016-09-30 11:38:58 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 57]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-09-30 11:39:09 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (1.2ms)
+  Rendered tasks/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 27.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-09-30 11:39:15 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TeSIfu+3AVvBZeZtHDZ2/SHZJEf+iGaRTz51i+J4zHNt2aGrSSzKc+gHvFAKdiRiyD0Y+LTxnohcJ1pk/SBznA==", "post"=>{"title"=>"Make fruit salad", "description"=>"With fruits"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Make fruit salad"], ["description", "With fruits"], ["created_at", "2016-09-30 18:39:15.482400"], ["updated_at", "2016-09-30 18:39:15.482400"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:39:15 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:39:15 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:39:15 -0700
+
+
+Started GET "/tasks/show/58" for ::1 at 2016-09-30 11:39:17 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"58"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 58]]
+  Rendered tasks/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/58/edit" for ::1 at 2016-09-30 11:39:18 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"58"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 58]]
+  Rendered tasks/_form.html.erb (1.0ms)
+  Rendered tasks/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:39:18 -0700
+
+
+Started PATCH "/tasks/58/update" for ::1 at 2016-09-30 11:39:21 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XY3eQtVt3yD83XSui1cfK8us0cXwXYzx/kBBv94n2Ot9sPeXc/YUCNW/LpOdF020IkjterokdOjtWW5QwX9nBA==", "patch"=>{"title"=>"Make fruit salads", "description"=>"With fruits"}, "commit"=>"Update Task", "id"=>"58"}
+  [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 58]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tasks" SET "title" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["title", "Make fruit salads"], ["updated_at", "2016-09-30 18:39:21.857571"], ["id", 58]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/show/58
+Completed 302 Found in 9ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/tasks/show/58" for ::1 at 2016-09-30 11:39:21 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"58"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 58]]
+  Rendered tasks/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:39:21 -0700
+
+
+Started DELETE "/tasks/58/destroy" for ::1 at 2016-09-30 11:39:33 -0700
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AqwKBM3kNtyA3nSofoMwCkxNj0tWd4ByVK8ndBsL2WAikSPRa3/99Km8LpVow2KVpamz9BwOeGtHtgibBFNmjw==", "id"=>"58"}
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 58]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 58]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:39:33 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.6ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:39:33 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:39:33 -0700
+
+
+Started GET "/tasks/show/57" for ::1 at 2016-09-30 11:39:46 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"57"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 57]]
+  Rendered tasks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/tasks/57/destroy" for ::1 at 2016-09-30 11:39:49 -0700
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Z2gdBGoYF31hwZbvyTlUrIP+N1BusdYbZHp8Lo5BHbVHVTTRzIPcVUijzNLfeQYzahoL7yTILgJ3Y1PBkRmiWg==", "id"=>"57"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 57]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 57]]
+  [1m[35m (3.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:39:49 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:39:49 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:39:49 -0700
+
+
+Started GET "/tasks/new" for ::1 at 2016-09-30 11:39:51 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (0.9ms)
+  Rendered tasks/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-09-30 11:39:57 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"adE19szpq8C387vANID3dBYifoYrhViV5+4sw+3k7PpJ7BwjanJg6J6R4f0iwKXr/8ZCOWH8oIz09wMs8rxTFQ==", "post"=>{"title"=>"Party with llamas", "description"=>"YO"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Party with llamas"], ["description", "YO"], ["created_at", "2016-09-30 18:39:57.499610"], ["updated_at", "2016-09-30 18:39:57.499610"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2016-09-30 11:39:57 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 25ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:39:57 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:39:57 -0700
+
+
+Started GET "/tasks/show/59" for ::1 at 2016-09-30 11:40:00 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"59"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 59]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tasks/59/update" for ::1 at 2016-09-30 11:40:01 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"BEVGZ9R8Khfkv7R3HsPcenGtddQ4o+S3dmGpOWsORe0keG+ycufhP83d7koIg47lmElJa3LaHK5leIbWdFb6Ag==", "id"=>"59"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 59]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_at", "2016-09-30 18:40:01.206125"], ["updated_at", "2016-09-30 18:40:01.206541"], ["id", 59]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/59
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/tasks/show/59" for ::1 at 2016-09-30 11:40:01 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"59"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 59]]
+  Rendered tasks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 11:40:01 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-09-30 11:40:03 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 11:40:03 -0700
