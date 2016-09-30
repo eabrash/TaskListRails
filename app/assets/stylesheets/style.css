@@ -11,6 +11,14 @@ h1 {
   background-color: white;
 }
 
+img {
+  max-height: 12px;
+}
+
+.button_to {
+  display: inline-block;
+}
+
 article {
   padding: 0.5% % 0.5% 1%;
   margin-left: 3%;

@@ -6,11 +6,12 @@
     <% @tasks.each do |task| %>
       <li><%= link_to(task.title, show_path(task.id)) %>
         <% if task.completed_at %>
-          [COMPLETED]
+          <img src='/assets/checkmark.png', alt="completion checkmark">
         <% else %>
-          [<%= link_to("Mark as completed", update_path(task.id), :method => 'patch') %>]
+          <%= button_to("Complete!", update_path(task.id), :method => 'patch') %>
+          <%= button_to("Edit", edit_path(task.id), :method => 'get') %>
         <% end %>
-        (<%= link_to("Delete", destroy_path(task.id), :data => {:confirm => 'Are you sure?'}, :method => 'delete') %>)</li>
+        <%= button_to("Delete", destroy_path(task.id), :data => {:confirm => 'Are you sure?'}, :method => 'delete') %></li>
     <% end %>
   </ul>
 </article>

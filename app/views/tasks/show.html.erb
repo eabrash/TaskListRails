@@ -12,14 +12,18 @@
     <% end %>
   </p>
   <h2>Date completed:</h2>
-  <p>
-    <% if @task.completed_at %>
-      <%= @task.completed_at %>
-    <% else %>
-      <%= "Not yet completed" %>
-    <% end %>
-  </p>
 
-  <p><%= button_to "Edit", edit_path(@task.id), method: :get %></p>
+  <% if @task.completed_at %>
+    <p>
+      <%= @task.completed_at %>
+    </p>
+  <% else %>
+    <p>
+      <%= "Not yet completed" %>
+    </p>
+    <p>
+      <%= button_to "Edit", edit_path(@task.id), method: :get %>
+    </p>
+  <% end %>
 
 </article>
