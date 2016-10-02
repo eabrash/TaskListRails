@@ -13107,3 +13107,178 @@ Started GET "/assets/checkmark.png" for ::1 at 2016-09-30 14:26:07 -0700
 
 
 Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-09-30 14:26:07 -0700
+
+
+Started GET "/" for ::1 at 2016-10-01 22:02:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.6ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 641ms (Views: 622.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/style.self-501abb5539a43a648e005b9e181cc8715ea169335a9c131a78e67957ed879812.css?body=1" for ::1 at 2016-10-01 22:02:07 -0700
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-01 22:02:07 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-01 22:02:07 -0700
+
+
+Started DELETE "/tasks/54/destroy" for ::1 at 2016-10-01 22:02:11 -0700
+Processing by TasksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rUp9gaJ1WGVW2UUTKdSdxF/PiYsJzwnRLObGRPYahbmsFQw9MJadYQ3Z9F0D7onSxUex3rlPF/ywRB2/naUeoQ==", "id"=>"54"}
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 54]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 54]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2016-10-01 22:02:11 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 47ms (Views: 46.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/style.self-501abb5539a43a648e005b9e181cc8715ea169335a9c131a78e67957ed879812.css?body=1" for ::1 at 2016-10-01 22:02:11 -0700
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-01 22:02:11 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-01 22:02:11 -0700
+
+
+Started GET "/tasks/new" for ::1 at 2016-10-01 22:02:14 -0700
+Processing by TasksController#new as HTML
+  Rendered tasks/_form.html.erb (29.2ms)
+  Rendered tasks/new.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 91ms (Views: 89.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-10-01 22:02:28 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FeDwzs4VXDhp2mdeAqTp8HU/iycHtMyS94ruKB1bAfAUv4FyXPaZPDLa1hAonv3m77ezcrc00r9rKDXTduSa6A==", "post"=>{"title"=>"Destroy the Sith", "description"=>"Much simpler"}, "commit"=>"Create Task"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Destroy the Sith"], ["description", "Much simpler"], ["created_at", "2016-10-02 05:02:28.083407"], ["updated_at", "2016-10-02 05:02:28.083407"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2016-10-01 22:02:28 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-01 22:02:28 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-01 22:02:28 -0700
+
+
+Started PATCH "/tasks/65/update" for ::1 at 2016-10-01 22:02:31 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"dFIa29+Onvqn3r7V1PWXwh6tqCOv727TsLY9D5ovJkd1DWtnTW1b/vzeD5v+z4PUhCWQdh9vcP4sFOb08ZC9Xw==", "id"=>"65"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 65]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["completed_at", "2016-10-02 05:02:31.249713"], ["updated_at", "2016-10-02 05:02:31.251335"], ["id", 65]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2016-10-01 22:02:31 -0700
+Processing by TasksController#index as HTML
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks"
+  Rendered tasks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-01 22:02:31 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-01 22:02:31 -0700
+
+
+Started GET "/tasks/63/edit" for ::1 at 2016-10-01 22:02:34 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"63"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 63]]
+  Rendered tasks/_form.html.erb (1.3ms)
+  Rendered tasks/edit.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-01 22:02:34 -0700
+
+
+Started PATCH "/tasks/63/update" for ::1 at 2016-10-01 22:02:42 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TnjXKSiKvzkJoDdx1cSIEhLvI5fM4GNO7b1WOqr8k9xPJ6aVuml6PVKghj///pwEiGcbwnxgfWNxH43BwUMIxA==", "patch"=>{"title"=>"Go to dance lessons", "description"=>"NO!!!"}, "commit"=>"Update Task", "id"=>"63"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 63]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["description", "NO!!!"], ["updated_at", "2016-10-02 05:02:42.186004"], ["id", 63]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/show/63
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/tasks/show/63" for ::1 at 2016-10-01 22:02:42 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 63]]
+  Rendered tasks/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-01 22:02:42 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-01 22:02:49 -0700
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-01 22:02:49 -0700
+
+
+Started GET "/tasks/show/63" for ::1 at 2016-10-01 22:02:50 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 63]]
+  Rendered tasks/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 52ms (Views: 50.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/tasks/63/update" for ::1 at 2016-10-01 22:02:54 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"gcoiFHWrLSDEmrT84KUb8dyqUkLLEodl5CQLJmMOFb6AlVOo50joJJ+aBbLKnw/nRiJqF3uSmUh4htDdCLGOpg==", "id"=>"63"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 63]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_at", "2016-10-02 05:02:54.201200"], ["updated_at", "2016-10-02 05:02:54.201583"], ["id", 63]]
+  [1m[35m (8.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/63
+Completed 302 Found in 12ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/tasks/show/63" for ::1 at 2016-10-01 22:02:54 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 63]]
+  Rendered tasks/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-01 22:02:54 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-01 22:02:54 -0700
