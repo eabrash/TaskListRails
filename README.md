@@ -1,3 +1,11 @@
+# Reflection
+
+In general, I was pretty happy with this project. I felt good about a lot of the Rails stuff fairly early in the week, so I worked through the later waves before we learned some of the methodology in class. It was helpful for me to have time to go back and improve my code using the new information (for example, about more advanced forms and buttons). I was especially happy that I was able to figure out how to identify the referring page using request.referer, and this made it possible for me to correctly handle multiple types of requests passing through the controller's update method.
+
+One area for improvement that Chris pointed out in his feedback on this assigment (thanks Chris!) is that I still struggle sometimes with the HTTP verbs (get, put/patch, delete, post). In particular, in this assignment, I was using a patch when I should have used a put for editing. I think the reason I did this was because I couldn't get it to work correctly with a put - there were some cases where I would change the specified HTTP verb, but it wouldn't change (or would change in an unexpected way) the verb that was sent with the request. I still have some work to do in understanding how this works and how I can control the HTTP verb of a request in different contexts.
+
+My chair pair and I had similar programs in general, but mine had some "fancier" functionality because I had more time available to work on the assignment. We discussed some features like the request.referer and render: partial that I found interesting and helpful.
+
 # Task List Rails ✅
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
