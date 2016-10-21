@@ -14530,3 +14530,52 @@ Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.1ms)
 
 
 Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-20 17:55:34 -0700
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-20 18:02:26 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered sessions/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 256ms (Views: 235.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-20 18:02:26 -0700
+
+
+Started DELETE "/sessions/destroy" for ::1 at 2016-10-20 18:02:28 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ewq7l6GEba0ebIdK4OPAlTM1mbPUyuybw0zGrFq9PPhiF87no5yTaafdGUvSsQuOeJQiJF7cyxv+6cVOyqekIw=="}
+Redirected to http://localhost:3000/sessions/index
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-20 18:02:28 -0700
+Processing by SessionsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-20 18:02:28 -0700
+
+
+Started POST "/auth/github/" for ::1 at 2016-10-20 18:02:30 -0700
+
+
+Started GET "/auth/github/callback?code=3a4d21750c089e3e0a22&state=0bce2d25bf6e1a0bd9d343c41da653a6a96caeb1a065dfa2" for ::1 at 2016-10-20 18:02:30 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"3a4d21750c089e3e0a22", "state"=>"0bce2d25bf6e1a0bd9d343c41da653a6a96caeb1a065dfa2", "provider"=>"github"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1  [["uid", 8129934], ["provider", "github"]]
+Redirected to http://localhost:3000/sessions/index
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-20 18:02:32 -0700
+Processing by SessionsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered sessions/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 56ms (Views: 54.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-20 18:02:32 -0700
