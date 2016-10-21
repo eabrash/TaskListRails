@@ -1,11 +1,9 @@
 <h1>Welcome to your task list!</h1>
-<% if !@user %>
-  <%= button_to "Log in", "/auth/github/" %>
-<% else %>
-  <%= button_to "Log out", sessions_destroy_path, method: :delete %>
-<% end %>
+
+<%= button_to "Log out", sessions_destroy_path, method: :delete %>
 
 <article>
+  <h2>Welcome, <%= @user.name %>!</h2>
   <p>Please click on a task name to see the details of the task.</p>
   <ul>
     <% @tasks.each do |task| %>
