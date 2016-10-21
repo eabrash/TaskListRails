@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
 
     session[:user] = @user.id
 
-    redirect_to sessions_index_path
+    redirect_to index_path
   end
 
   def destroy

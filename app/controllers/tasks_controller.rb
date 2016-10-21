@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
 
+  before_action :check_login
+
   def index
     @tasks = Task.all
     @user = User.find_by(id: session[:user])
@@ -50,4 +52,13 @@ class TasksController < ApplicationController
     Task.find(params[:id]).destroy
     redirect_to action: "index"
   end
+
+  private
+
+  def check_login
+    if !session[:user]
+      redirect_to sessions_index_path
+    end
+  end
+
 end
