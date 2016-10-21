@@ -27,5 +27,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    session[:user] = nil
+    redirect_to sessions_index_path
   end
 end
