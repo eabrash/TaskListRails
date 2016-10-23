@@ -2,6 +2,8 @@
 
 <%= button_to "Log out", sessions_destroy_path, method: :delete %>
 
+<p><%= flash[:notice] %></p>
+
 <article>
   <h2>Welcome, <%= @user.name %>!</h2>
   <p>Please click on a task name to see the details of the task.</p>

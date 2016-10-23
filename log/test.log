@@ -378,3 +378,305 @@ UserTest: test_A_user_must_have_an_email_to_be_valid
 UserTest: test_A_user_can_be_correctly_built_from_a_normal_Github_auth_hash
 ---------------------------------------------------------------------------
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-21 05:53:39', '2016-10-21 05:53:39', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-21 05:53:39', '2016-10-21 05:53:39', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Bob the Industrious', 'bob@bobness.com', 1, 'github', '2016-10-21 05:53:39', '2016-10-21 05:53:39', 902541635)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Jane "Conquers Tasks" Smith', 'jane@janesworld.com', 2, 'github', '2016-10-21 05:53:39', '2016-10-21 05:53:39', 980204181)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES (NULL, 'winniethepooh@hundredacrewoods.com', 3, 'github', '2016-10-21 05:53:39', '2016-10-21 05:53:39', 449349069)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_normal_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_cannot_be_built_from_an_insufficient_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+UserTest: test_A_user_must_have_an_email_to_be_valid
+----------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_A_user_must_have_a_provider_to_be_valid
+------------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UserTest: test_A_user_must_have_a_uid_to_be_valid
+-------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_minimal_Github_auth_hash
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-21 15:05:50', '2016-10-21 15:05:50', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-21 15:05:50', '2016-10-21 15:05:50', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Bob the Industrious', 'bob@bobness.com', 1, 'github', '2016-10-21 15:05:50', '2016-10-21 15:05:50', 902541635)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Jane "Conquers Tasks" Smith', 'jane@janesworld.com', 2, 'github', '2016-10-21 15:05:50', '2016-10-21 15:05:50', 980204181)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES (NULL, 'winniethepooh@hundredacrewoods.com', 3, 'github', '2016-10-21 15:05:50', '2016-10-21 15:05:50', 449349069)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_cannot_be_built_from_an_insufficient_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_minimal_Github_auth_hash
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_normal_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_A_user_must_have_a_provider_to_be_valid
+------------------------------------------------------
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UserTest: test_A_user_must_have_a_uid_to_be_valid
+-------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+UserTest: test_A_user_must_have_an_email_to_be_valid
+----------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-21 15:17:44', '2016-10-21 15:17:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-21 15:17:44', '2016-10-21 15:17:44', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Bob the Industrious', 'bob@bobness.com', 1, 'github', '2016-10-21 15:17:44', '2016-10-21 15:17:44', 902541635)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Jane "Conquers Tasks" Smith', 'jane@janesworld.com', 2, 'github', '2016-10-21 15:17:44', '2016-10-21 15:17:44', 980204181)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES (NULL, 'winniethepooh@hundredacrewoods.com', 3, 'github', '2016-10-21 15:17:44', '2016-10-21 15:17:44', 449349069)[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_cannot_be_built_from_an_insufficient_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_A_user_must_have_a_provider_to_be_valid
+------------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+UserTest: test_A_user_must_have_an_email_to_be_valid
+----------------------------------------------------
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UserTest: test_A_user_must_have_a_uid_to_be_valid
+-------------------------------------------------
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_minimal_Github_auth_hash
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_normal_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-21 15:17:56', '2016-10-21 15:17:56', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-21 15:17:56', '2016-10-21 15:17:56', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Bob the Industrious', 'bob@bobness.com', 1, 'github', '2016-10-21 15:17:56', '2016-10-21 15:17:56', 902541635)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Jane "Conquers Tasks" Smith', 'jane@janesworld.com', 2, 'github', '2016-10-21 15:17:56', '2016-10-21 15:17:56', 980204181)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES (NULL, 'winniethepooh@hundredacrewoods.com', 3, 'github', '2016-10-21 15:17:56', '2016-10-21 15:17:56', 449349069)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_normal_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UserTest: test_A_user_must_have_a_uid_to_be_valid
+-------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_minimal_Github_auth_hash
+----------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_A_user_must_have_a_provider_to_be_valid
+------------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+UserTest: test_A_user_must_have_an_email_to_be_valid
+----------------------------------------------------
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_cannot_be_built_from_an_insufficient_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-23 20:49:45', '2016-10-23 20:49:45', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-23 20:49:45', '2016-10-23 20:49:45', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Bob the Industrious', 'bob@bobness.com', 1, 'github', '2016-10-23 20:49:45', '2016-10-23 20:49:45', 902541635)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Jane "Conquers Tasks" Smith', 'jane@janesworld.com', 2, 'github', '2016-10-23 20:49:45', '2016-10-23 20:49:45', 980204181)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES (NULL, 'winniethepooh@hundredacrewoods.com', 3, 'github', '2016-10-23 20:49:45', '2016-10-23 20:49:45', 449349069)[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_normal_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------------------------
+UserTest: test_A_user_can_be_correctly_built_from_a_minimal_Github_auth_hash
+----------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+UserTest: test_A_user_must_have_a_uid_to_be_valid
+-------------------------------------------------
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+UserTest: test_A_user_must_have_an_email_to_be_valid
+----------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------------------------------------
+UserTest: test_A_user_cannot_be_built_from_an_insufficient_Github_auth_hash
+---------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+UserTest: test_A_user_must_have_a_provider_to_be_valid
+------------------------------------------------------
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 902541635]]
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 449349069]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (1.1ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-23 20:49:52', '2016-10-23 20:49:52', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2016-09-28 14:04:07.000000', '2016-10-23 20:49:52', '2016-10-23 20:49:52', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Bob the Industrious', 'bob@bobness.com', 1, 'github', '2016-10-23 20:49:52', '2016-10-23 20:49:52', 902541635)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Jane "Conquers Tasks" Smith', 'jane@janesworld.com', 2, 'github', '2016-10-23 20:49:52', '2016-10-23 20:49:52', 980204181)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES (NULL, 'winniethepooh@hundredacrewoods.com', 3, 'github', '2016-10-23 20:49:52', '2016-10-23 20:49:52', 449349069)[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+TasksControllerTest: test_should_get_update
+-------------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+----------------------------------------
+TasksControllerTest: test_should_get_new
+----------------------------------------
+Processing by TasksController#new as HTML
+Redirected to http://test.host/sessions/index
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+TasksControllerTest: test_should_get_show
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------
+TasksControllerTest: test_should_get_destroy
+--------------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------
+TasksControllerTest: test_should_get_edit
+-----------------------------------------
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-------------------------------------------
+TasksControllerTest: test_should_get_create
+-------------------------------------------
+Processing by TasksController#create as HTML
+Redirected to http://test.host/sessions/index
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------
+TasksControllerTest: test_should_get_index
+------------------------------------------
+Processing by TasksController#index as HTML
+Redirected to http://test.host/sessions/index
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+SessionsControllerTest: test_should_get_create
+----------------------------------------------
+Processing by SessionsController#create as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+SessionsControllerTest: test_should_get_destroy
+-----------------------------------------------
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/sessions/index
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.0ms)[0m  rollback transaction
