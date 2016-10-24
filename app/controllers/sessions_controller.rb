@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
 
   def index
     @user = User.find_by(id: session[:user])
+    if @user
+      redirect_to index_path
+    end
   end
 
   def create
@@ -23,7 +26,7 @@ class SessionsController < ApplicationController
 
     session[:user] = @user.id
 
-    redirect_to sessions_index_path
+    redirect_to index_path
   end
 
   def destroy

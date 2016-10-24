@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get 'sessions/index'
 
-  root 'tasks#index'
+  root 'sessions#index'
 
   get 'tasks/index', as: 'index'
 
