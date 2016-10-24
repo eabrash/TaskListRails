@@ -3,7 +3,8 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :name
       t.string :email
-      t.integer :uid, null: false
+      t.string :uid
+      t.string :image
       t.string :provider, null: false
 
       t.timestamps null: false
