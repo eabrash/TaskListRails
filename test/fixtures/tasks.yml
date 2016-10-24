@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyString
+wash_dog:
+  title: "Wash the dog"
+  description: "With shampoo"
+  user: bob
   completed_at: 2016-09-28 14:04:07
 
-two:
-  title: MyString
-  description: MyString
+wash_cat:
+  title: "Wash the cat"
+  user: satine
+  description: "With kitty shampoo"
   completed_at: 2016-09-28 14:04:07

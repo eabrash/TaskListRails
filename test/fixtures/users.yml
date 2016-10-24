@@ -17,3 +17,9 @@ nameless:
   email: winniethepooh@hundredacrewoods.com
   uid: 3
   provider: github
+
+# satine:
+#   name: Satine
+#   email: satine@catworld.com
+#   uid: 123545
+#   provider: github

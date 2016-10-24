@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
 
   def index
     @user = User.find_by(id: session[:user])
+    if @user
+      redirect_to index_path
+    end
   end
 
   def create

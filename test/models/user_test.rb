@@ -59,7 +59,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal(user.email, 'satine@catworld.com')
   end
 
-  test "A user cannot be  built from an insufficient Github auth hash" do
+  test "A user cannot be built from an insufficient Github auth hash" do
     user = User.build_from_github(OmniAuth::AuthHash.new({:provider => 'github', :info => {:email => 'satine@catworld.com'}}))
     assert_not user.valid?
     user = User.build_from_github(OmniAuth::AuthHash.new({:provider => 'github', :uid => '123545', :info => {}}))

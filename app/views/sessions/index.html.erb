@@ -1,15 +1,7 @@
 <h1>Welcome to TaskList</h1>
 
-<% if !@user %>
-  <%= button_to "Log in", "/auth/github/" %>
-<% else %>
-  <%= button_to "Log out", sessions_destroy_path, method: :delete %>
-<% end %>
+<%= button_to "Log in", "/auth/github/" %>
 
 <article>
-  <% if @user %></p>
-    <p>Welcome, <%= @user.name %>!</p>
-  <% else %>
     <p>Please log in!</p>
-  <% end %>
 </article>
