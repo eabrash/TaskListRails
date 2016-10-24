@@ -14,13 +14,13 @@ class SessionsController < ApplicationController
       redirect_to login_failure_path
     end
 
-    @user = User.find_by(uid: auth_hash[:uid], provider: 'github')
+    @user = User.find_by(uid: auth_hash[:uid], provider: auth_hash['provider'])
 
     # if there is no user matching
     if @user.nil?
-     @user = User.build_from_github(auth_hash)
+     @user = User.build_from_github_or_google(auth_hash)
      if !@user.save
-       flash[:notice] = "Sorry, there was a problem pulling data from your Github account. User not created."
+       flash[:notice] = "Sorry, there was a problem pulling your account data. User not created."
      end
     end
 

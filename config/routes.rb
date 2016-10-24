@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'tasks/index', as: 'index'
 
+  get 'sessions/new'
+
   get 'tasks/show/:id' => 'tasks#show', as: 'show'
 
   get 'tasks/new' => 'tasks#new', as: 'new'
