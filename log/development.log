@@ -19704,3 +19704,421 @@ Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.2ms)
 
 
 Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-24 13:44:52 -0700
+
+
+Started GET "/" for ::1 at 2016-10-25 22:12:14 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 299ms (Views: 281.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:12:14 -0700
+
+
+Started GET "/tasks/new" for ::1 at 2016-10-25 22:12:16 -0700
+Processing by TasksController#new as HTML
+Redirected to http://localhost:3000/sessions/index
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-25 22:12:16 -0700
+Processing by SessionsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/show/4" for ::1 at 2016-10-25 22:12:21 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"4"}
+Redirected to http://localhost:3000/sessions/index
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-25 22:12:21 -0700
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:12:21 -0700
+
+
+Started GET "/sessions/new" for ::1 at 2016-10-25 22:12:25 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:12:25 -0700
+
+
+Started POST "/auth/github/" for ::1 at 2016-10-25 22:12:27 -0700
+
+
+Started GET "/auth/github/callback?code=d6c7212329e745ec2587&state=78ea3189c2735f330db3a0c46fd6250e3d7cb25db6d81920" for ::1 at 2016-10-25 22:12:27 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"d6c7212329e745ec2587", "state"=>"78ea3189c2735f330db3a0c46fd6250e3d7cb25db6d81920", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "8129934"], ["provider", "github"]]
+Redirected to http://localhost:3000/tasks/index
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:12:28 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTask Load (0.4ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered tasks/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 49ms (Views: 26.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:12:28 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:12:34 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered tasks/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:12:38 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered tasks/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-10-25 22:12:40 -0700
+Processing by TasksController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered tasks/_form.html.erb (19.3ms)
+  Rendered tasks/new.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 54ms (Views: 52.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-10-25 22:12:50 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BGuoy599cQKFuWAg4D3UUQRGeikbsxjlhGIlfCh+SusqPlXNrE3P3Koti0kl4yiARAMVRsfa3hn/DUGwk6J+QQ==", "post"=>{"title"=>"GITHUB: Buy carrots", "description"=>"LARGE."}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "GITHUB: Buy carrots"], ["description", "LARGE."], ["created_at", "2016-10-26 05:12:50.131279"], ["updated_at", "2016-10-26 05:12:50.131279"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tasks" SET "user_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["user_id", 2], ["updated_at", "2016-10-26 05:12:50.138089"], ["id", 4]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/index
+Completed 302 Found in 12ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:12:50 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered tasks/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:12:50 -0700
+
+
+Started DELETE "/sessions/destroy" for ::1 at 2016-10-25 22:12:53 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"E2txGpe8oFX4JhvOBSMI2aggYQ40lE/6GCTmROiRoHs9PowcpIwei9ey8KfA/fQI6GUOYej9iQZjS4KIU02U0Q=="}
+Redirected to http://localhost:3000/sessions/index
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-25 22:12:53 -0700
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:12:53 -0700
+
+
+Started GET "/sessions/new" for ::1 at 2016-10-25 22:12:55 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:12:55 -0700
+
+
+Started POST "/auth/google_oauth2/" for ::1 at 2016-10-25 22:12:57 -0700
+
+
+Started GET "/auth/google_oauth2/callback?state=513f71d3291ea418d11a2b774201f75046eea1f8570dd1cc&code=4/m2gK6Wr7tnTd6NNvVC3gnRz4oEoxxAbEwPVmX7jP-Wc" for ::1 at 2016-10-25 22:12:58 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"513f71d3291ea418d11a2b774201f75046eea1f8570dd1cc", "code"=>"4/m2gK6Wr7tnTd6NNvVC3gnRz4oEoxxAbEwPVmX7jP-Wc", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "115227156681275830707"], ["provider", "google_oauth2"]]
+Redirected to http://localhost:3000/tasks/index
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:12:58 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:12:58 -0700
+
+
+Started GET "/tasks/new" for ::1 at 2016-10-25 22:13:01 -0700
+Processing by TasksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tasks/_form.html.erb (1.4ms)
+  Rendered tasks/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-10-25 22:13:20 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rhK+XXKXcq/mMgMD7oFmLYBBsfj2sl+d5PdDQURxqNmAR0NbQafMccmm6GorX5r8wATelyrbmWGfmCeN/62ccw==", "post"=>{"title"=>"GOOGLE: Eat vegetables", "description"=>"YUMMMZ."}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "GOOGLE: Eat vegetables"], ["description", "YUMMMZ."], ["created_at", "2016-10-26 05:13:20.384786"], ["updated_at", "2016-10-26 05:13:20.384786"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "tasks" SET "user_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["user_id", 1], ["updated_at", "2016-10-26 05:13:20.387035"], ["id", 5]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/index
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:13:20 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tasks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:13:20 -0700
+
+
+Started DELETE "/sessions/destroy" for ::1 at 2016-10-25 22:13:23 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UQS7wK/okKor2FvsHH7DOxk5+rZBbwkmzxlN9V4ZB7t/UUbGnNgudARMsIXZoD/qWXyV2Z0Gz9q0dik55cUzEQ=="}
+Redirected to http://localhost:3000/sessions/index
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-25 22:13:23 -0700
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:13:23 -0700
+
+
+Started GET "/sessions/new" for ::1 at 2016-10-25 22:13:25 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:13:25 -0700
+
+
+Started POST "/auth/google_oauth2/" for ::1 at 2016-10-25 22:13:26 -0700
+
+
+Started GET "/auth/google_oauth2/callback?state=f342771c0eda6a2d17bc45a642c2c65d58c3fbfbda515360&code=4/lXXkSmG4v6MIPc2SrFIN9kdZ4bwzo5Ql_Nv-eFjYA9o" for ::1 at 2016-10-25 22:13:28 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"f342771c0eda6a2d17bc45a642c2c65d58c3fbfbda515360", "code"=>"4/lXXkSmG4v6MIPc2SrFIN9kdZ4bwzo5Ql_Nv-eFjYA9o", "provider"=>"google_oauth2"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "112839165481931430708"], ["provider", "google_oauth2"]]
+Redirected to http://localhost:3000/tasks/index
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:13:28 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tasks/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:13:28 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:13:30 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tasks/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 34ms (Views: 30.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/tasks/new" for ::1 at 2016-10-25 22:13:34 -0700
+Processing by TasksController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered tasks/_form.html.erb (2.0ms)
+  Rendered tasks/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/tasks/create" for ::1 at 2016-10-25 22:13:47 -0700
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0V1ljS12KEvwaCMLbg7Fedhgg4wVrbyI/KEGl9n0Bh//CJiLHkaWld/8yGKr0DmomCXs48nEenSHzmJbYigytQ==", "post"=>{"title"=>"GOOGLE ALUM: Dance with wolves", "description"=>"CAREFULLY."}, "commit"=>"Create Task"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "GOOGLE ALUM: Dance with wolves"], ["description", "CAREFULLY."], ["created_at", "2016-10-26 05:13:47.471785"], ["updated_at", "2016-10-26 05:13:47.471785"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "tasks" SET "user_id" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["user_id", 3], ["updated_at", "2016-10-26 05:13:47.474167"], ["id", 6]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/index
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:13:47 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tasks/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:13:47 -0700
+
+
+Started PATCH "/tasks/3/update" for ::1 at 2016-10-25 22:13:49 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"LV+fqhVqaBB+mSbv6/fHjcu0V6VO4NNwAA96zSIC/mMDCmKsJlrWzlENzYYuKTtci/E4ypKJFYx7YB4Bmd7KyQ==", "id"=>"3"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTask Exists (0.1ms)[0m  SELECT  1 AS one FROM "tasks" WHERE "tasks"."user_id" = ? AND "tasks"."id" = ? LIMIT 1  [["user_id", 3], ["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?  [["completed_at", "2016-10-26 05:13:49.903500"], ["updated_at", "2016-10-26 05:13:49.904237"], ["id", 3]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tasks/index
+Completed 302 Found in 16ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:13:49 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tasks/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-25 22:13:49 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:13:49 -0700
+
+
+Started GET "/tasks/6/edit" for ::1 at 2016-10-25 22:13:51 -0700
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mTask Exists (0.1ms)[0m  SELECT  1 AS one FROM "tasks" WHERE "tasks"."user_id" = ? AND "tasks"."id" = ? LIMIT 1  [["user_id", 3], ["id", 6]]
+  Rendered tasks/_form.html.erb (4.2ms)
+  Rendered tasks/edit.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:13:51 -0700
+
+
+Started PATCH "/tasks/6/update" for ::1 at 2016-10-25 22:13:55 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2fyPeu/yzZ6gIcYN2lF64KP3n3x+u8DLf+cddLyZ5aBMg872I916FUUbHHyt7k6wsqxEi2TKf9WkPi5aS5TPA==", "patch"=>{"title"=>"GOOGLE ALUM: Dance with wolves", "description"=>"CAREFULLY...."}, "commit"=>"Update Task", "id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mTask Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE "tasks"."user_id" = ? AND "tasks"."id" = ? LIMIT 1[0m  [["user_id", 3], ["id", 6]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "tasks" SET "description" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["description", "CAREFULLY...."], ["updated_at", "2016-10-26 05:13:55.220744"], ["id", 6]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/6
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/tasks/show/6" for ::1 at 2016-10-25 22:13:55 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mTask Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE "tasks"."user_id" = ? AND "tasks"."id" = ? LIMIT 1[0m  [["user_id", 3], ["id", 6]]
+  Rendered tasks/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:13:55 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:13:58 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tasks/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-25 22:13:58 -0700
+
+
+Started GET "/tasks/show/6" for ::1 at 2016-10-25 22:13:59 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mTask Exists (0.1ms)[0m  SELECT  1 AS one FROM "tasks" WHERE "tasks"."user_id" = ? AND "tasks"."id" = ? LIMIT 1  [["user_id", 3], ["id", 6]]
+  Rendered tasks/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 38ms (Views: 33.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/tasks/6/update" for ::1 at 2016-10-25 22:14:02 -0700
+Processing by TasksController#update as HTML
+  Parameters: {"authenticity_token"=>"KD7Jp/BzXezbcesKDBHryzkX1ZqDwBN3j1Pi/VO1adAGazShw0PjMvTlAGPJzxcaeVK69V+p1Yv0PIYx6Gldeg==", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mTask Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE "tasks"."user_id" = ? AND "tasks"."id" = ? LIMIT 1[0m  [["user_id", 3], ["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "tasks" SET "completed_at" = ?, "updated_at" = ? WHERE "tasks"."id" = ?[0m  [["completed_at", "2016-10-26 05:14:02.355408"], ["updated_at", "2016-10-26 05:14:02.356300"], ["id", 6]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/tasks/show/6
+Completed 302 Found in 10ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/tasks/show/6" for ::1 at 2016-10-25 22:14:02 -0700
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mTask Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "tasks" WHERE "tasks"."user_id" = ? AND "tasks"."id" = ? LIMIT 1[0m  [["user_id", 3], ["id", 6]]
+  Rendered tasks/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-25 22:14:02 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:14:02 -0700
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:14:05 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tasks/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.3ms)
