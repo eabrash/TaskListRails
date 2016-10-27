@@ -20202,3 +20202,5 @@ Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
 
 
 Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:17:52 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
