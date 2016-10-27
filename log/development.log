@@ -20122,3 +20122,83 @@ Processing by TasksController#index as HTML
   [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 3]]
   Rendered tasks/index.html.erb within layouts/application (6.7ms)
 Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:17:24 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered tasks/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 317ms (Views: 268.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/checkmark.png" for ::1 at 2016-10-25 22:17:24 -0700
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:17:24 -0700
+
+
+Started DELETE "/sessions/destroy" for ::1 at 2016-10-25 22:17:26 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u539n/C7oFY9Eem5cfW6dlw6EQmEq0mLvdsixgqnyXiVyACZw4seiBKFAtC0K0anHH9+ZljCj3fGtEYKsXv90g=="}
+Redirected to http://localhost:3000/sessions/index
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-25 22:17:26 -0700
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:17:26 -0700
+
+
+Started GET "/sessions/new" for ::1 at 2016-10-25 22:17:27 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:17:27 -0700
+
+
+Started POST "/auth/github/" for ::1 at 2016-10-25 22:17:28 -0700
+
+
+Started GET "/auth/github/callback?code=e4f8f6552818f9f7d08c&state=879f183398a985a0b65afd74ce3c7a75f95c4cbf565b0d5c" for ::1 at 2016-10-25 22:17:28 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"e4f8f6552818f9f7d08c", "state"=>"879f183398a985a0b65afd74ce3c7a75f95c4cbf565b0d5c", "provider"=>"github"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "8129934"], ["provider", "github"]]
+Redirected to http://localhost:3000/tasks/index
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks/index" for ::1 at 2016-10-25 22:17:30 -0700
+Processing by TasksController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTask Load (0.6ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered tasks/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:17:30 -0700
+
+
+Started DELETE "/sessions/destroy" for ::1 at 2016-10-25 22:17:52 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CaUH/p270++VT7F+KO6mv+vmNbHAqBwc4eCtJRzdFnMn8Pr4rottMbrbWhftMFpuq6Na3hzB2uCaj8nppwEi2Q=="}
+Redirected to http://localhost:3000/sessions/index
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/index" for ::1 at 2016-10-25 22:17:52 -0700
+Processing by SessionsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered sessions/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/IMGP0233.JPG" for ::1 at 2016-10-25 22:17:52 -0700

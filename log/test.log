@@ -1868,3 +1868,75 @@ Redirected to http://test.host/tasks/index
 Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
   [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "tasks"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id", "user_id") VALUES ('Wash the dog', 'With shampoo', '2016-09-28 14:04:07.000000', '2016-10-26 15:19:55', '2016-10-26 15:19:55', 662813897, 902541635)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "tasks" ("title", "description", "completed_at", "created_at", "updated_at", "id", "user_id") VALUES ('Wash the cat', 'With kitty shampoo', '2016-09-28 14:04:07.000000', '2016-10-26 15:19:55', '2016-10-26 15:19:55', 955500060, 1037800622)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "users"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Bob the Industrious', 'bob@bobness.com', '1', 'github', '2016-10-26 15:19:55', '2016-10-26 15:19:55', 902541635)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES ('Jane "Conquers Tasks" Smith', 'jane@janesworld.com', '2', 'github', '2016-10-26 15:19:55', '2016-10-26 15:19:55', 980204181)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "users" ("name", "email", "uid", "provider", "created_at", "updated_at", "id") VALUES (NULL, 'winniethepooh@hundredacrewoods.com', '3', 'github', '2016-10-26 15:19:55', '2016-10-26 15:19:55', 449349069)[0m
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+SessionsControllerTest: test_Can_Create_a_user
+----------------------------------------------
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "123545"], ["provider", "github"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("uid", "provider", "name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "123545"], ["provider", "github"], ["name", "Satine"], ["email", "satine@catworld.com"], ["created_at", "2016-10-26 15:19:55.331134"], ["updated_at", "2016-10-26 15:19:55.331134"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/tasks/index
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------------------------------
+SessionsControllerTest: test_If_a_user_logs_in_twice,_it_doesn't_create_a_second_user
+-------------------------------------------------------------------------------------
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1  [["uid", "123545"], ["provider", "github"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("uid", "provider", "name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["uid", "123545"], ["provider", "github"], ["name", "Satine"], ["email", "satine@catworld.com"], ["created_at", "2016-10-26 15:19:55.336345"], ["updated_at", "2016-10-26 15:19:55.336345"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/tasks/index
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "123545"], ["provider", "github"]]
+Redirected to http://test.host/tasks/index
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------------------------------------
+SessionsControllerTest: test_If_a_user_logs_out,_their_session_is_destroyed
+---------------------------------------------------------------------------
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"github"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ? AND "users"."provider" = ? LIMIT 1[0m  [["uid", "123545"], ["provider", "github"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("uid", "provider", "name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["uid", "123545"], ["provider", "github"], ["name", "Satine"], ["email", "satine@catworld.com"], ["created_at", "2016-10-26 15:19:55.342993"], ["updated_at", "2016-10-26 15:19:55.342993"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/tasks/index
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Processing by SessionsController#destroy as HTML
+Redirected to http://test.host/sessions/index
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------------------------------------------
+TasksControllerTest: test_If_a_user_is_not_logged_in,_they_cannot_see_their_task.
+---------------------------------------------------------------------------------
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 662813897]]
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"662813897"}
+Redirected to http://test.host/sessions/index
+Filter chain halted as :check_login rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
